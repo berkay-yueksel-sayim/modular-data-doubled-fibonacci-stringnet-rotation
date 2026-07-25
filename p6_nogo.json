@@ -1,0 +1,165 @@
+{
+  "source": "sim_measured",
+  "quantity": "C0 no-go: 1D-mapped real-space braiding is structurally trivial ([U(C1),U(C2)]=0)",
+  "obstruction1_gauge_removable": {
+    "loop_traversals": [
+      [
+        "braid_bond",
+        1
+      ],
+      [
+        "braid_bond",
+        -1
+      ]
+    ],
+    "link_phases_I": {
+      "braid_bond": -0.7853981633974484
+    },
+    "link_phases_psi": {
+      "braid_bond": 2.356194490192345
+    },
+    "net_loop_phase_I": 0.0,
+    "net_loop_phase_psi": 0.0
+  },
+  "obstruction2_superselection": {
+    "max_commutator_10000_diag_pairs": 0.0,
+    "oracle_contrast_frob_needs_Fmove": 2.8284271247461894,
+    "note": "spatial transports are diagonal in {I,psi} -> commute; 2sigma_y needs the off-diagonal F-move"
+  },
+  "headline_commutator": {
+    "scope": "STRUCTURAL/demonstrator route: holonomy U(C)=diag(exp(i*net_I),exp(i*net_psi)) built from the exact TensorKit R-symbols. NOT the dense-ED adiabatic transport (stage4b1/4a3), which is the independent confirmation of the same claim.",
+    "loop_C1": [
+      [
+        "braid_bond_1",
+        1
+      ],
+      [
+        "braid_bond_1",
+        -1
+      ]
+    ],
+    "loop_C2": [
+      [
+        "braid_bond_2",
+        1
+      ],
+      [
+        "braid_bond_2",
+        -1
+      ]
+    ],
+    "U_C1_re": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "U_C1_im": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "U_C2_re": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "U_C2_im": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "frob_U_C1_minus_identity": 0.0,
+    "frob_U_C2_minus_identity": 0.0,
+    "frob_commutator_U_C1_U_C2": 0.0,
+    "opnorm_commutator_U_C1_U_C2": 0.0,
+    "positive_controls": {
+      "note": "the headline zero needs BOTH builders proven live. (A) holonomy builder: a net-NONZERO winding loop gives U != identity. (B) commutator builder: the same norm/opnorm path, fed an F-move-dressed off-diagonal pair, returns sqrt(2) != 0; the F=identity anti-fudge collapses it to exactly 0. Deliberately NOT used as a control: two winding loops over the same bond-phase pair are powers of one abelian generator, so their commutator vanishes trivially and would prove nothing.",
+      "A_frob_U_W1_minus_identity": 2.0,
+      "B_frob_commutator_Fmove_dressed": 1.4142135623730947,
+      "B_frob_commutator_antifudge_F_identity": 0.0
+    }
+  },
+  "machinery_alive": {
+    "U_trivial_re": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0
+      ]
+    ],
+    "U_trivial_im": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "U_control_re": [
+      [
+        -1.0000000000000036,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0000000000000036
+      ]
+    ],
+    "U_control_im": [
+      [
+        7.4593109467002705e-16,
+        0.0
+      ],
+      [
+        0.0,
+        7.4593109467002705e-16
+      ]
+    ],
+    "U_control_expected_re": [
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        -1.0
+      ]
+    ],
+    "U_control_expected_im": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "frob_U_control_minus_identity": 2.828427124746195
+  }
+}

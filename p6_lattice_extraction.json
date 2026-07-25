@@ -1,0 +1,251 @@
+{
+  "source": "sim_measured",
+  "quantity": "Full signed modular S and T of doubled Fibonacci, extracted from the 3x3 lattice via the C3 channel (Li-Mong V.1)",
+  "gate": "verify_patch 5/5 + P5 (harness output record); thresholds per the pre-registration Sec.5b (adjudicated in an independent verification pass), operationalized in this script header BEFORE the run",
+  "inputs": {
+    "M_wilson": "p6_Mgs_j_3x3.npy",
+    "M_rot": "C3 rotation (V_gs^T R V_gs), centers (0,0),(1,1),(2,0)",
+    "input_scale_deposited": 0.0032668,
+    "threshold_a": 0.009800399999999999
+  },
+  "circularity": "extract() received only measured matrices + the deposited input scale. Theory S/T loaded ONLY in the final evaluation section. No F/R, no candidate labels, no modular-solvability selector on labelings.",
+  "verdict": "SUCCESS_per_preregistered_gates",
+  "results_per_center": {
+    "(0, 0)": [
+      {
+        "residual": 4.801729437638451e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.900350506737929e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942344159,
+          -0.809016994204469,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524858982,
+          0.5877852525271166,
+          1.5716984717764634e-11,
+          0.0
+        ],
+        "cost_internal": 1.928937942626869e-05
+      },
+      {
+        "residual": 3.628959392477765e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.0306922936754635e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942555863,
+          -0.8090169942605331,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524567597,
+          0.587785252449951,
+          3.4998664818709448e-12,
+          0.0
+        ],
+        "cost_internal": 1.9289379426270484e-05
+      },
+      {
+        "residual": 2.9426946078281404e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.6838879158452651e-10,
+        "matched_conjugate": true,
+        "T_diag_re": [
+          -0.8090169942772661,
+          -0.8090169942759708,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524269199,
+          0.5877852524287026,
+          -5.499018925125349e-13,
+          0.0
+        ],
+        "cost_internal": 1.9289379426272073e-05
+      },
+      {
+        "residual": 3.262291310487419e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.8591961355654412e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942699891,
+          -0.8090169942656665,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          0.5877852524369358,
+          -0.5877852524428854,
+          2.226977053327476e-12,
+          0.0
+        ],
+        "cost_internal": 1.9289379426270335e-05
+      }
+    ],
+    "(1, 1)": [
+      {
+        "residual": 4.801729437638451e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.900350506737929e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942344159,
+          -0.809016994204469,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524858982,
+          0.5877852525271166,
+          1.5716984717764634e-11,
+          0.0
+        ],
+        "cost_internal": 1.928937942626869e-05
+      },
+      {
+        "residual": 3.628959392477765e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.0306922936754635e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942555863,
+          -0.8090169942605331,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524567597,
+          0.587785252449951,
+          3.4998664818709448e-12,
+          0.0
+        ],
+        "cost_internal": 1.9289379426270484e-05
+      },
+      {
+        "residual": 2.9426946078281404e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.6838879158452651e-10,
+        "matched_conjugate": true,
+        "T_diag_re": [
+          -0.8090169942772661,
+          -0.8090169942759708,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524269199,
+          0.5877852524287026,
+          -5.499018925125349e-13,
+          0.0
+        ],
+        "cost_internal": 1.9289379426272073e-05
+      },
+      {
+        "residual": 3.262291310487419e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.8591961355654412e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942699891,
+          -0.8090169942656665,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          0.5877852524369358,
+          -0.5877852524428854,
+          2.226977053327476e-12,
+          0.0
+        ],
+        "cost_internal": 1.9289379426270335e-05
+      }
+    ],
+    "(2, 0)": [
+      {
+        "residual": 3.5849717466589806e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.034190342865665e-10,
+        "matched_conjugate": true,
+        "T_diag_re": [
+          -0.8090169942694355,
+          -0.8090169942553807,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524376979,
+          0.5877852524570427,
+          -2.5285440062961752e-14,
+          0.0
+        ],
+        "cost_internal": 1.9289379426269623e-05
+      },
+      {
+        "residual": 3.134253092525859e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.8238649812507463e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942740151,
+          -0.8090169942677432,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524313945,
+          0.587785252440027,
+          1.9280785020082479e-13,
+          0.0
+        ],
+        "cost_internal": 1.9289379426272734e-05
+      },
+      {
+        "residual": 2.953500994541588e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 1.69201036097785e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942754935,
+          -0.8090169942768659,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          -0.5877852524293598,
+          0.5877852524274707,
+          4.399196267963974e-13,
+          0.0
+        ],
+        "cost_internal": 1.9289379426273208e-05
+      },
+      {
+        "residual": 3.575095381395935e-10,
+        "sign_structure_ok": true,
+        "T_dev_max": 2.0454832748664783e-10,
+        "matched_conjugate": false,
+        "T_diag_re": [
+          -0.8090169942547168,
+          -0.8090169942641077,
+          1.0,
+          1.0
+        ],
+        "T_diag_im": [
+          0.5877852524579563,
+          -0.587785252445031,
+          3.320257135710327e-12,
+          0.0
+        ],
+        "cost_internal": 1.9289379426272026e-05
+      }
+    ]
+  },
+  "scope": "One lattice size (3x3), one model, one Wilson-loop type. The Z2 (T vs T*) is a property of the achiral theory (c=0) and remains a convention; matched_conjugate flags which convention the run landed on. 'Sign structure correct' is claimed for the extracted S under the best permutation, NOT as 'chirality uniquely measured'.",
+  "center_equivalence_note": "The three rotation centers of this file are not three independent repetitions. On an LxL torus the C3 edge permutation depends on the center only through (j-i) mod 3, so the nine possible centers fall into three classes; centers in one class perform the same computation and their projected rotations are identical bit for bit. (0, 0) and (1, 1) are in the same class, which is why their entries here coincide field for field: the twelve entries are eight distinct solutions. Across all nine centers the projected rotation agrees to about 1.3e-15. One matrix per class is deposited (p6_M_R_3x3.npy, p6_M_R_3x3_center20.npy, p6_M_R_3x3_center10.npy); p6_center_independence.py checks this and reproduces the residuals recorded here for centers (0, 0) and (2, 0). Numbers in this file are unchanged."
+}

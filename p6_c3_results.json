@@ -1,0 +1,107 @@
+{
+  "source": "sim_measured",
+  "quantity": "C3 lattice rotation on the 3x3 doubled-Fibonacci GS manifold: does it split the chiral pair?",
+  "verdict": "SPLITS",
+  "scope": "One lattice size (3x3), one model. 'Splits' means the pair is SEPARATED, not LABELED: M_R is real, so complex conjugation K maps the omega-eigenvector to the omega-bar-eigenvector; the tau/tau-bar assignment remains a convention. No extraction proof for full signed S/T.",
+  "load_bearing": {
+    "note": "These could have failed. They carry the verdict.",
+    "G3_orthogonality_dev": 2.9623678994480463e-15,
+    "G4_order3_dev": 4.349107978772712e-15,
+    "M_R_is_identity": false,
+    "alg_dim_loops_only": 10,
+    "alg_dim_with_C3": 16,
+    "M_R_in_loop_algebra": false
+  },
+  "structurally_forced": {
+    "note": "WARNING (independent-verification finding, 15 July 2026): once M_R is real+orthogonal+order-3 (G3/G4), its eigenvalues lie exactly on the cube roots of unity and complex ones come in conjugate pairs. For 4x4 exactly THREE spectra are possible: {1,1,1,1}, {1,1,w,wbar}, {w,wbar,w,wbar}. The agreement with the theory ST spectrum therefore selects 1 of 3 (log2(3)=1.585 bit) and is NOT a precision measurement. The residual ~1e-15 is floating-point noise. The antisymmetric norm is likewise forced by the spectrum, not measured: a bare 120-degree rotation block reproduces it with no lattice at all.",
+    "n_possible_spectra": 3,
+    "information_content_bits": 1.584962500721156,
+    "selected_option": "B_{1,1,w,wbar}",
+    "antisym_norm_M_R": 1.2247448713915894,
+    "antisym_norm_toy_rotation_no_lattice": 1.2247448713915892,
+    "antisym_forced_value_sqrt3_over_2_times_sqrt2": 1.2247448713915892,
+    "theory_ST_eigenvalues_re": [
+      -0.5000000000000002,
+      -0.5000000000000002,
+      0.9999999999999996,
+      1.0000000000000004
+    ],
+    "theory_ST_eigenvalues_im": [
+      -0.8660254037844383,
+      0.8660254037844388,
+      1.6653345369377348e-16,
+      2.220446049250313e-16
+    ],
+    "lattice_M_R_eigenvalues_re": [
+      -0.5,
+      -0.5,
+      1.0,
+      1.0000000000000013
+    ],
+    "lattice_M_R_eigenvalues_im": [
+      -0.8660254037844389,
+      0.8660254037844389,
+      0.0,
+      0.0
+    ],
+    "spectrum_dev_DO_NOT_READ_AS_PRECISION": 9.155133597044475e-16
+  },
+  "contrast_wilson_loops": {
+    "note": "Sec.III B's own metric. The contrast is real but is a consequence of G3/G4, not an independent measurement.",
+    "antisym_norm_M_i": 1.2387340770718284e-16,
+    "antisym_norm_M_j": 7.545303252603077e-17
+  },
+  "discarded_measure": {
+    "note": "spread was pre-registered but is DISCARDED by the author: M_R does not commute with M_i, so it does not preserve M_i's degenerate eigenspace; spread is a compression, not a restriction spectrum. Not load-bearing.",
+    "spread_on_degenerate_pair": 1.0488088481754776,
+    "commutator_M_R_M_i": 0.597541336988883
+  },
+  "consistency_check_rotation_centers": {
+    "note": "These three centers are not three independent routes. On an LxL torus the C3 edge permutation depends on the center only through (j-i) mod 3, so (0, 0) and (1, 1) lie in the same class and their entries here coincide field for field. This block is a consistency check on the optimizer, not an independent repetition; the independent repetition in this work is the second lattice size. See center_equivalence_note in p6_lattice_extraction.json and p6_center_independence.py.",
+    "center_(0, 0)": {
+      "eigenvalues_re": [
+        -0.5,
+        -0.5,
+        1.0,
+        1.0000000000000013
+      ],
+      "eigenvalues_im": [
+        -0.8660254037844389,
+        0.8660254037844389,
+        0.0,
+        0.0
+      ],
+      "orthogonality_dev": 2.9623678994480463e-15
+    },
+    "center_(1, 1)": {
+      "eigenvalues_re": [
+        -0.5,
+        -0.5,
+        1.0,
+        1.0000000000000013
+      ],
+      "eigenvalues_im": [
+        -0.8660254037844389,
+        0.8660254037844389,
+        0.0,
+        0.0
+      ],
+      "orthogonality_dev": 2.9623678994480463e-15
+    },
+    "center_(2, 0)": {
+      "eigenvalues_re": [
+        -0.5000000000000002,
+        -0.5000000000000002,
+        1.0000000000000009,
+        1.0000000000000018
+      ],
+      "eigenvalues_im": [
+        -0.866025403784439,
+        0.866025403784439,
+        0.0,
+        0.0
+      ],
+      "orthogonality_dev": 4.601144929788827e-15
+    }
+  }
+}

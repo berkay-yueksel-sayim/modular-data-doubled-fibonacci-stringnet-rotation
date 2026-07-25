@@ -1,0 +1,211 @@
+{
+  "_revision_3c": "Revision 3c, 16 Jul: verdict CONFIRMED_2x2 -> ...CRIT1-3(...). Reason: the top-level field did not carry the verdict_code_slip caveat and, read alone, was wrong (suggesting all 4 criteria confirmed). Honest: criteria 1-3 ok, criterion 4 single-channel prediction missed / resolved by the two-channel law. Label only; no extraction number changed.",
+  "preregistration": "pre-registration record (before the run)",
+  "dim_constraint_subspace": 175,
+  "V_gs_shape": "(175, 4)",
+  "G5_VtV_dev": 2.2791988847973517e-15,
+  "G5_worst_BpV_minus_V": 7.991256859993929e-16,
+  "wilson_choice": "ops_wfat_i[1]",
+  "ideality_2x2": 0.022118297120066792,
+  "ideality_3x3_ref": 0.0032668,
+  "C3_sigma_order3_nontrivial": true,
+  "C3_configs_outside_basis": 0,
+  "M_R_orthogonality_dev": 4.4093419488325565e-15,
+  "M_R_order3_dev": 6.343155857371215e-15,
+  "M_R_is_identity": false,
+  "frame_2x2_RMjR_vs_Mi": 2.093776023339518e-15,
+  "PRIOR_residual_prediction": 4.3571479045695365e-15,
+  "extraction": {
+    "(0, 0)": [
+      {
+        "residual": 7.24444564537034e-10,
+        "sign_ok": true,
+        "conj": false,
+        "T_re": [
+          -0.8090169942325988,
+          -0.8090169943362385,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          -0.5877852524883992,
+          0.5877852523457513,
+          8.586418514649527e-12,
+          0.0
+        ]
+      },
+      {
+        "residual": 1.7860418785978925e-09,
+        "sign_ok": true,
+        "conj": false,
+        "T_re": [
+          -0.8090169942335361,
+          -0.8090169946203335,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.587785252487109,
+          -0.5877852519547282,
+          4.325988937014961e-11,
+          0.0
+        ]
+      },
+      {
+        "residual": 8.575583316540904e-10,
+        "sign_ok": true,
+        "conj": true,
+        "T_re": [
+          -0.8090169944674629,
+          -0.8090169943205446,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.5877852521651366,
+          -0.5877852523673521,
+          -2.76401853787154e-11,
+          0.0
+        ]
+      }
+    ],
+    "(1, 1)": [
+      {
+        "residual": 6.438197156360788e-10,
+        "sign_ok": true,
+        "conj": true,
+        "T_re": [
+          -0.809016994501453,
+          -0.8090169943950205,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          -0.5877852521183531,
+          0.5877852522648449,
+          -8.258291277915095e-12,
+          0.0
+        ]
+      },
+      {
+        "residual": 1.7547286824062028e-09,
+        "sign_ok": true,
+        "conj": false,
+        "T_re": [
+          -0.8090169947157871,
+          -0.8090169944808471,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.5877852518233475,
+          -0.5877852521467147,
+          1.0696915171660164e-10,
+          0.0
+        ]
+      },
+      {
+        "residual": 8.099668610156433e-10,
+        "sign_ok": true,
+        "conj": true,
+        "T_re": [
+          -0.809016994486761,
+          -0.809016994348642,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.5877852521385749,
+          -0.5877852523286794,
+          -1.8309508839315685e-11,
+          0.0
+        ]
+      }
+    ],
+    "(0, 1)": [
+      {
+        "residual": 9.007212567115087e-10,
+        "sign_ok": true,
+        "conj": true,
+        "T_re": [
+          -0.8090169943011881,
+          -0.8090169944808936,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          -0.5877852523939942,
+          0.5877852521466508,
+          -6.620879922417229e-11,
+          0.0
+        ]
+      },
+      {
+        "residual": 1.5071165787934447e-09,
+        "sign_ok": true,
+        "conj": false,
+        "T_re": [
+          -0.8090169945747453,
+          -0.8090169942433065,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.587785252017475,
+          -0.5877852524736613,
+          1.596777805612166e-11,
+          0.0
+        ]
+      },
+      {
+        "residual": 8.711760605609928e-10,
+        "sign_ok": true,
+        "conj": true,
+        "T_re": [
+          -0.8090169944282636,
+          -0.8090169942647364,
+          1.0,
+          1.0
+        ],
+        "T_im": [
+          0.5877852522190897,
+          -0.5877852524441657,
+          -4.4338752477295346e-11,
+          0.0
+        ]
+      }
+    ]
+  },
+  "frame_prediction_hit(0.2..5x)": false,
+  "verdict": "CONFIRMED_2x2_CRIT1-3 (criterion 4 = single-channel frame prediction MISSED in the pre-registered form, resolved via the two-channel law; see verdict_code_slip + interpretation)",
+  "structurally_forced_note": "M_R spectrum = 1 of 3 options (real+orthogonal+ord3) = 1.585 bit, structurally forced - do NOT present it as a measurement (15 Jul lesson).",
+  "preregistration_deviations": {
+    "criterion_4_frame_prediction": "MISSED as registered (0.2..5x): prediction 4.36e-15, measured 6.4e-10..1.8e-9. CAUSE: the pre-registered formula (sec. 0.2 of the registration) contained ONLY the frame term and omitted the already-deposited QUADRATIC eigenvalue channel (p6_reconciliation_test.json, part 1, k=4.5e-11..6.3e-11).",
+    "verdict_code_slip": "The printed verdict CONFIRMED_2x2 enforced only criteria 1-3; the pre-registration (sec. 2) required 'all four'. Honest verdict: criteria 1-3 CONFIRMED, criterion 4 MISSED in the registered single-channel form - see interpretation.",
+    "wilson_pool_sequence": "First run used only m1k_ops -> gate FAIL (disc 1.7x); pool extended by the deposited Wfat loops, gate criterion unchanged; Wfat_s1 passes at 25.7x; Wfat_s0 = a perfect vacuum loop (4.6e-16) as an involuntary control."
+  },
+  "interpretation": {
+    "two_channel_law_no_free_parameters": "residual ~ 2.081*frame + k*s^2 with s = ideality/3.2668e-3. k INTERVAL OVER ALL part-1 points (conservative, independent recomputation 16 Jul): k = 4.259e-12 .. 6.256e-11 (the original quote 4.5e-11..6.3e-11 used only the upper cluster -> TOO FAVORABLE, discarded). 2x2: s=6.771, s^2=45.8, frame term 4.36e-15 negligible. PREDICTION interval 1.952e-10 .. 2.868e-09; MEASURED 6.438e-10 .. 1.786e-09. CORE STATEMENT (conservative): the measured interval lies ENTIRELY inside the prediction interval; least favorable edge comparison max(measured)/min(prediction) = 9.15x, most favorable = contained (1.0x). The earlier quote 'factor 1.2-4.5' is REPLACED - the paper carries the conservative version. Zero free parameters (2.081 and k from p6_reconciliation_test.json, deposited BEFORE the 2x2 run).",
+    "channel_dominance_switches": "3x3 is frame-dominated (LOBPCG V_gs ~1e-10 >> quadratic ~5e-11); 2x2 is eigenvalue-quadratic-dominated (dense eigh -> frame 2e-15; ideality 6.77x worse). Out-of-sample confirmation of BOTH channels of the reconciliation law.",
+    "size_trend_ideality": "2x2: 2.212e-2 -> 3x3: 3.2668e-3 (factor 6.8 improvement per size step). Pair degeneracy preserved exactly on both sizes.",
+    "core": "BOTH lattice sizes deliver the full signed S+T (same class, sign 16/16, Z2 mixed). The 'single lattice size' limitation is closed; the error budget is a model validated across two sizes."
+  },
+  "_revision": {
+    "v": 2,
+    "date": "2026-07-16",
+    "predecessor_md5": "b3ece381fafff62acac5a0e9965c145a",
+    "reason": "conservative numerical correction, independently recomputed before adoption. Raw data (extraction/results) UNCHANGED; only the interpretation sharpened + the Wfat_s0 control deposited."
+  },
+  "wfat_s0_vacuum_control": {
+    "note": "Involuntary positive control of the Wilson-identification method (deposited on review request): the Wfat_s0 operators of both directions are PERFECT vacuum loops on the ground-space manifold.",
+    "character": "(1,1)",
+    "rel_residual": 4.578e-16,
+    "eigenvalues_gs": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "meaning": "The character-fit method recognizes a known-trivial loop as exactly trivial - it is not biased toward (tau,taubar)."
+  }
+}

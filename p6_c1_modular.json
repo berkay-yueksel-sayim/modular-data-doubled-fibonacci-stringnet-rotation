@@ -1,0 +1,217 @@
+{
+  "quantity": "C1: lattice-emergent modular content of the doubled-Fibonacci Levin-Wen string-net (Sec. II/III, Table I of the accompanying paper)",
+  "READ_THIS_FIRST": "Every entry carries an explicit evidence CLASS, and the classes are NOT interchangeable. (a) = two structurally distinct LATTICE routes (vacuum row only). (b) = the topological spins: the loop overlaps constrain them only via ALGEBRAIC consistency paths, while the direct lattice measurement comes from the point-group rotation channel (class d, deposited separately in p6_c3_results.json / p6_lattice_extraction.json / p6_extraction_2x2.json). (c) = separate lock. (d) = the rotation channel that resolves the FULL signed S and T. This file records the classes (a)-(c) plus the MEASURED loop-route LIMIT ('honest_cut' below); the rotation channel supersedes an earlier 'signed S is not lattice-emergent' framing -- the loop route alone does not carry the sign, but the lattice does, via rotation.",
+  "model": {
+    "theory": "doubled Fibonacci = Fib (x) conj(Fib), Drinfeld center of the Fibonacci fusion category",
+    "lattice": "Levin-Wen string-net on an LxL torus, B_p from the real Fibonacci F-symbols",
+    "sectors": [
+      "(1,1)",
+      "(tau,1)",
+      "(1,taubar)",
+      "(tau,taubar)"
+    ],
+    "quantum_dims": [
+      1.0,
+      1.618033988749895,
+      1.618033988749895,
+      2.618033988749895
+    ],
+    "D_squared": 13.090169943749475,
+    "D": 3.618033988749895,
+    "central_charge": 0,
+    "hilbert_dims": {
+      "2x2": 175,
+      "2x3": 2250,
+      "3x3": 106250
+    },
+    "size_ceiling": "4x4 ~13 GB/vector, 5x5 ~1.4 PB/vector -> exact ED infeasible beyond 3x3",
+    "provenance": "the source record"
+  },
+  "class_a_vacuum_row": {
+    "class": "(a) TWO structurally distinct LATTICE routes -- the ONLY place this phrase applies",
+    "route_1": "operator route: S = U_i^dag U_j (flux-basis overlap of the two cycles)",
+    "route_2": "Verlinde-Casimir route: |S_0a| = d_a/D read from the lattice loop spectrum; extraction inputs ONLY {V_gs, W_cycle_i, W_cycle_j}; NO F, NO R, NO analytic S",
+    "absS0_from_loop_spectrum": [
+      0.276393202250021,
+      0.4472135954999579,
+      0.4472135954999579,
+      0.7236067977499789
+    ],
+    "absS0_theory": [
+      0.276393202250021,
+      0.447213595499958,
+      0.447213595499958,
+      0.723606797749979
+    ],
+    "absS0_match_vs_theory": 1.1102230246251565e-16,
+    "absS0_match_route_to_route": "< 1e-9",
+    "PRECISION_SCOPE_WARNING": "absS0_match_vs_theory (1.11e-16) is the VERLINDE-CASIMIR route vs the ANALYTIC theory -- it is |partial_absS0_from_loop_spectrum - partial_absS0_theory|.max(). It is NOT route-to-route agreement. The operator-route values are recorded to four digits only ({0.2764,0.4472,0.7236}), so route-to-route agreement is documented as '< 1e-9' and nothing tighter. Quoting 1.1e-16 as route-to-route would overstate it by seven orders of magnitude.",
+    "S00_value": 0.276393202250021,
+    "S00_error": 1.7e-15,
+    "S00_lattice": "2x2 (dim 175) -- the source run uses hilbert_2x2; the error 1.7e-15 is a 2x2 result, not 3x3",
+    "S00_identity": "= 1/D = 1/3.618033988749895",
+    "absS_multiset": [
+      0.2764,
+      0.4472,
+      0.7236
+    ],
+    "provenance": "second-method verification run, 2026-06-22 (internal record; fields: absS0_match, partial_absS0_from_loop_spectrum, partial_absS0_theory); S00 and operator-route values from earlier internal analysis notes (not part of this record)"
+  },
+  "class_b_topological_spins": {
+    "class": "(b) NON-CIRCULAR but ALGEBRAIC -- two consistency routes applied TO the lattice S. NOT two lattice routes.",
+    "T": "diag(1, exp(4i*pi/5), exp(-4i*pi/5), 1)",
+    "spins_over_pi": [
+      0.0,
+      0.8,
+      -0.8,
+      0.0
+    ],
+    "route_b1_verlinde_fixpoint": {
+      "residual": 3.98e-11,
+      "note": "(ST)^3=S^2 from random grid starts. A CONSISTENCY CHECK: no oracle insert, but S alone does not pin T uniquely (Galois orbits stay open)."
+    },
+    "route_b2_gauss_sum_anomaly": {
+      "relation": "p_+ = sum_a d_a^2 theta_a = D at c=0 (Bantay/Vafa)",
+      "p_plus": 3.618033988749895,
+      "order3_trap_p_plus": 5.23606797749979,
+      "order3_rejected": true,
+      "note": "Structurally independent: pins T uniquely WITHOUT (ST)^3, and rejects the order-3 alternative since 5.236 != D. order-5 congruence + c=0 then select the physical (not Galois-conjugate) solution."
+    },
+    "lattice_T_channel_available": false,
+    "lattice_T_channel_reason": "real-symmetric lattice loops are phase-free; the geometric Dehn twist on 3x3 is order-3 (SL(2,Z/3) truncation), NOT order-5. The only T channel is the S bootstrap == operator route == not independent. A direct geometric order-5 twist needs L = 0 mod 5.",
+    "provenance": "the source record (Verlinde-route extraction, T_distinct_channel)"
+  },
+  "class_c_gsd": {
+    "class": "(c) SEPARATE lock, its own evidence class",
+    "GSD": 4,
+    "gap": 1.0,
+    "invariant_over": [
+      "2x2",
+      "2x3",
+      "3x3"
+    ],
+    "E0_by_lattice": {
+      "2x2": -4,
+      "3x3": -9
+    },
+    "E0_scope_warning": "E0 is EXTENSIVE: one unit per plaquette, so -4 on 2x2 (4 plaquettes) and -9 on 3x3 (9 plaquettes). The build order quotes '-4' WITHOUT naming the lattice -- that is the 2x2 value. The INVARIANCE belongs to the GSD and the gap, NOT to E0. Never present E0 as size-invariant, and never quote a single E0 'for the model'. Source for -9: the 3x3 run (internal run records; generator tracer_3x3.py, LOBPCG, gap=1; not part of this record).",
+    "lock": "lock_levin_wen",
+    "provenance": "internal countercheck record, 2026-06-24"
+  },
+  "soundness": {
+    "gauge_invariance": {
+      "gauges": "24 x O(4) of the ground-state manifold (V -> V*Q)",
+      "worst_2x2": 2.4e-15,
+      "worst_2x3": 5.6e-15,
+      "RANGE_NOTE": "The primary source records BOTH give a RANGE 2.4e-15...5.6e-15, i.e. the worst case over the tested sizes is 5.6e-15 (on 2x3), not 2.4e-15. The paper quotes both endpoints. Flagged during an independent verification pass: an earlier internal summary quoted only '<=2.4e-15'.",
+      "lock": "lock_gauge_invariance",
+      "provenance": "the source records"
+    },
+    "u4_discriminator": {
+      "u4_fail": 0.603,
+      "o4_robustness_pass": 4.35e-11,
+      "note": "U(4) FAILS at 0.603 while O(4) passes -> the gauge test discriminates and is not vacuous. O(4) is the physical residual group because F real => H real/time-reversal invariant => Ko = i(M-M^dag)/2 = 0 (6.9e-17) => GS choosable real.",
+      "provenance": "the source record"
+    },
+    "size_independence": {
+      "max_dev": 2.5e-11,
+      "sizes": [
+        "2x2",
+        "2x3",
+        "3x3"
+      ],
+      "lock": "lock_size_independence",
+      "provenance": "the source record"
+    },
+    "genuine_string": {
+      "commutes_with_Bp": 1.7e-16,
+      "support_outside_groundspace": true,
+      "nontrivial_on_gs_manifold": true,
+      "lock": "lock_string_genuine",
+      "wording_rule": "call it CHIRALITY-DISCRIMINATING / R-phase-sensitive, NEVER 'chiral string' -- the theory is achiral, c=0.",
+      "provenance": "the source record"
+    },
+    "single_route_admission": "The |S|/quantum-dimension extraction ITSELF is single-route on 3x3 (no two-route redundancy at that size; 5x5 ED-infeasible). Carried by the genuine out-of-GS chirality-discriminating Wilson string, not by a second measurement."
+  },
+  "consistency_locks": {
+    "hexagon": 2.4e-16,
+    "pentagon_violations": 0,
+    "levin_wen": 1e-16,
+    "naive_FRF_minus_RFR_contrast": 1.18,
+    "contrast_note": "The naive evaluation returns 1.18 != 0 -> the lock discriminates and is not tautological.",
+    "provenance": "internal countercheck record, 2026-06-24"
+  },
+  "honest_cut": {
+    "headline": "The Wilson-LOOP ROUTE ALONE does not fix the signed modular S -- and we MEASURE that limit (loop algebra dim 10 = 1^2+3^2, chiral split capacity 0). This is a concrete instance of the Li-Mong bound (2203.04329). The lattice DOES fix the signed S and T -- via the point-group rotation channel (class d, deposits p6_c3_results.json / p6_lattice_extraction.json / p6_extraction_2x2.json), which is real but NOT symmetric and so carries the phase the loops cannot. An earlier headline 'the fully signed S is not lattice-emergent' is superseded: it was true of the loop route, not of the lattice.",
+    "loop_route_failure_MEASURED": {
+      "note": "All values below are TRUE of the RAW SIGNED S of the OPERATOR/loop route, which remains invalid as a modular S. They are the measured evidence that the LOOP route cannot sign -- not that the lattice cannot.",
+      "raw_signed_S_symmetry_error": 1.46,
+      "gauge_equivalence_best_24perm_16sign": 1.08,
+      "gauge_equivalence_required": 0.01,
+      "ST3_minus_S2": 1.27,
+      "canonical_S_pass": false,
+      "verlinde_on_raw_S": "negative, noninteger fusion multiplicities",
+      "provenance": "internal countercheck record, 2026-06-24"
+    },
+    "multiset_artifact_DO_NOT_CONFLATE": {
+      "what": "an internal 'e-15 match' of |S| row multisets using DIFFERENT row and column permutations (perm_r != perm_c)",
+      "why_not_a_result": "constrains the multiset of absolute values only; not a representation-preserving anyon relabeling, not an equality of S-matrices",
+      "warning": "This is a DIFFERENT OBJECT from signed_ST_match = 1.16e-10 below. Never conflate the two.",
+      "provenance": "internal countercheck record, 2026-06-24"
+    },
+    "wedderburn_obstruction_MEASURED": {
+      "note": "This is what lifts the honest cut from ASSERTED to DEMONSTRATED: the operator route does NOT resolve the 4th sector out of the lattice spectrum either.",
+      "commutator_Mi_Mj": 0.05622320881792416,
+      "Mi_eigs": [
+        -0.14310835056096335,
+        -0.1431083505568263,
+        0.05428174605846672,
+        0.3772724292118018
+      ],
+      "n_distinct_levels_per_cycle": 3,
+      "loop_algebra_dim": 10,
+      "loop_algebra_decomposition": "1^2 + 3^2  ->  C (+) M_3(C)",
+      "antisym_split_i_M_minus_MT_over_2": 0.0,
+      "antisym_split_float_floor": 7e-17,
+      "chiral_split_capacity": 0.0,
+      "sectors_resolved_signed_S": 2,
+      "sectors_needed_for_full_S": 4,
+      "sectors_resolved_basis_casimir": 4,
+      "casimir": "H_W = 0.7*Mi - 0.3*Mj (generic hermitian lattice Casimir); ONE hermitian Casimir resolves 4 distinct eigenvalues -> the four-sector BASIS separation IS lattice-reachable (a genuine positive), but a four-sector basis is NOT a signed four-sector S.",
+      "ceiling_argument_superseded": "An earlier argument held: any F/R-free method separating the 4 sectors in signed form must reuse the modular-solvability selector, hence is the same route repackaged. Corrected here: this held only for methods restricted to the real-symmetric LOOP algebra. The point-group rotation M_R is real but NOT symmetric and lies OUTSIDE the loop algebra (dim 10 -> 16); it carries the phase directly and is a genuinely distinct lattice route, not a repackaging. See p6_c3_results.json.",
+      "provenance": "second-method verification run, 2026-06-22 (internal record; seed 2026, 3x3, deterministic, numpy/scipy only)"
+    },
+    "signed_ST_match_SUPERSEDED_OLD_ROUTE": {
+      "value": 1.16e-10,
+      "what": "the COMPLETE SIGNED S/T assignment vs the analytic theory, via the SELECTOR-BACKED OLD ROUTE",
+      "scope_rule": "The value is CORRECT but SUPERSEDED. In an earlier route the chiral sign was SUPPLIED by an SL(2,Z) solvability selector, not measured. This work MEASURES the sign via the rotation channel (residuals 2.9e-10..1.8e-9, deposits p6_lattice_extraction.json / p6_extraction_2x2.json). Report 1.16e-10 only as a property of the superseded route.",
+      "provenance": "the source record"
+    },
+    "order3_note_corrected": {
+      "earlier_bundled_limitation_superseded": [
+        "(i) 'rests on a SINGLE lattice size, 3x3' -> now FALSE: the signed extraction was done on 2x2 AND 3x3.",
+        "(ii) 'a direct geometric twist needs L = 0 mod 5' -> STILL TRUE, but it is the SETUP of the channel, not a limit: the Dehn twist (order L on LxL) cannot realize the order-5 T; the rotation ST is a DIFFERENT SL(2,Z) element of intrinsic order 3, available on every size. That is WHY the rotation channel works on both 2x2 and 3x3.",
+        "(iii) 'no second signed lattice route' -> the loop route was never a SIGNED route (only |S|). There is exactly ONE signed lattice route (rotation), demonstrated on two SIZES -- not two routes. No collision with class (a)."
+      ],
+      "second_size_done": "2x2 done by dense eigh (dim 175); 4x4 ~13 GB/vector and 5x5 ~1.4 PB/vector remain infeasible, but a SECOND SIZE (2x2) was reached.",
+      "provenance": "p6_extraction_2x2.json v2 + p6_lattice_extraction.json"
+    },
+    "tube_algebra_NOT_a_certificate": {
+      "factorization_check": 1.11e-16,
+      "reason": "Z(C) = C (x) conj(C) is a theorem (Mueger) -> any theory-side center computation necessarily factorizes into S_fib (x) conj(S_fib). 'Two theory methods agree' is then guaranteed by the theorem and checks nothing.",
+      "citation_role": "1511.08090 (Bultinck et al.) is cited as a METHODS/CONTEXT reference ONLY, never as an independent certificate.",
+      "lock": "lock_factorizes_as_double",
+      "provenance": "the source record"
+    }
+  },
+  "cross_object_warnings": {
+    "M_tau_tau": "M_tautau = -1/phi^2 = -0.382 is the C0 TARGET VALUE of the dynamic half (a no-go, see Sec. IV). It was NEVER measured. Do not confuse with the C1 Wilson-loop eigenvalue +1/phi^2 (opposite sign, different quantity).",
+    "energetics": "E_GS = -(1+sqrt2) with gap sqrt2 belongs to the two-island Ising chain (the ALGEBRA ORACLE / p6_manifold.json), NOT to the doubled-Fibonacci lattice whose E0 = -4. Two different objects; never mix.",
+    "provenance": "internal countercheck record, 2026-06-24, and internal history note"
+  },
+  "reproduction": {
+    "analytic_side": "p6_modular_reference.py -- rebuilds the doubled-Fibonacci modular data from scratch (numpy only, no engine import, no stored oracle) and verifies every analytic target used in Table I, incl. the Gauss sum p_+ = D and the order-3 rejection at 5.236.",
+    "lattice_side": "requires the exact-diagonalization engine; the lattice values here are the deposited outputs of the runs cited per entry.",
+    "deterministic": true
+  }
+}

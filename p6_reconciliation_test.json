@@ -1,0 +1,71 @@
+{
+  "_revision_3c": "Revision 3c, 16 Jul: interpretation.part2 'slight saturation at 3.3e-3' was WRONG (earlier internal pass). Transfer is linear over 4.5 decades, factors 2.08057/52/53/88, scatter 0.018%. Label only; physics numbers (part2_eigenvector_channel) unchanged.",
+  "input_dev": 0.003266829782600346,
+  "delta_anyon": [
+    0.00462001964092007,
+    0.005165338968314059,
+    0.005165339016678261,
+    -0.004620019613403692
+  ],
+  "gate_baseline": true,
+  "part1_eigenvalue_channel": {
+    "0.3": [
+      5.657899408143423e-13,
+      4.045373749995107e-12
+    ],
+    "1.0": [
+      4.258798605094561e-12,
+      5.5568370928630177e-11
+    ],
+    "3.0": [
+      2.5272586071968113e-10,
+      4.870035874927474e-10
+    ],
+    "10.0": [
+      4.056956040014514e-09,
+      4.35118378383269e-09
+    ],
+    "30.0": [
+      1.2828538024250903e-08,
+      5.630221127775102e-08
+    ]
+  },
+  "part2_eigenvector_channel": {
+    "1.0e-10": 2.080565334400431e-10,
+    "1.0e-06": 2.0805178770915102e-06,
+    "1.0e-04": 0.0002080528948092068,
+    "3.3e-03": 0.006866917284220913
+  },
+  "part3_invariance": {
+    "char_min": 1.9289379226380337e-05,
+    "char_max": 1.9289379346402307e-05,
+    "char_rel_spread": 6.222178958282638e-09,
+    "sym_min": 1.0435209992518837,
+    "sym_max": 3.380819434385854
+  },
+  "verdict": "B_SCALED",
+  "verdict_automated_note": "The 'verdict' field comes from an overly coarse binary logic (flat vs. scaled). The raw data show a THIRD pattern, see 'interpretation'. Raw data unchanged.",
+  "interpretation": {
+    "part1_eigenvalue_channel": "QUADRATIC, neither linear nor flat: residual ~ k*strength^2 with k~1e-11..6e-11. At real strength 1x: 4e-12..6e-11 (subdominant). First order is projected out (part 3), second order exists and is measured. The pre-registered expectation 'flat' was WRONG at this refinement - only the first-order projection was correct.",
+    "part2_eigenvector_channel": "LINEAR with measured transfer factor 2.081 (constant over 4 1/2 decades: 2.08057/2.08052/2.08053/2.08088 (factors; scatter 0.018%). NO saturation: the 3.3e-3 point gave 2.08088, fully consistent - the transfer holds up to the real error size (strongest evidence, not an outlier).",
+    "part3_invariance": "Character residual under 300 random B: rel. scatter 6.22e-9 -> first-order projection demonstrated DIRECTLY (cause: the real delta form is equal on the degenerate pair up to 4.8e-11).",
+    "reconciliation_quantitative": "Lattice residual 2.94-4.80e-10 / 2.081 => implied frame error 1.4-2.3e-10 = the independently measured ground-space-manifold scale (R-Mj consistency 4.19e-11, second-method run 1.16e-10, gauge-inv 2.5e-11). The eigenvalue channel contributes only ~1e-11 at 1x. The P5 scaling gate's generic noise scales linearly because it corrupts ALL channels; the real lattice error lives almost entirely in the projected channel.",
+    "paper_ready_statement": "The C3 extraction is FIRST-ORDER insensitive to the dominant lattice error class (fusion-character deviation 3.3e-3; invariance demonstrated directly, remainder quadratic with a measured coefficient) and FRAME-limited (linear transfer 2.081; implied frame error 1.4-2.3e-10 consistent with independent measurements of the ground-space-manifold accuracy)."
+  },
+  "predecessor_note": "A predecessor diagnostic script (not part of this record) was constructed in a physically inconsistent way (lam sorted, rotation in the anyon frame -> impossible pairing); its 0-solutions outcome is NOT a physics finding. It remains an internal process document.",
+  "provenance": {
+    "generator": "p6_reconciliation_test.py",
+    "inputs": [
+      "p6_loop_ideality.json",
+      "p6_extract_c3.py"
+    ],
+    "deterministic_seeds": [
+      7,
+      23,
+      101,
+      5
+    ],
+    "reproduces": "every numeric field of this file; transfer factor 2.081 (2.08057/2.08052/2.08053/2.08088, scatter 0.018%) and the quadratic eigenvalue channel",
+    "note": "Re-run from this record: python p6_reconciliation_test.py (it overwrites this file; the interpretation fields above are added by hand and are not produced by the script)."
+  }
+}

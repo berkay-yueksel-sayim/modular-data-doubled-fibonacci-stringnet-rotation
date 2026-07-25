@@ -1,0 +1,91 @@
+{
+  "_revision_3c": "Revision 3c, 16 Jul: routes_agree false->true. Reason: the threshold was 1e-12, but |rel_resid_A - rel_resid_B| = 1.002e-11, and M_i/M_j are exactly coupled through R Mj R^-1 = M_i at 4.19e-11 - they CANNOT agree better than the measurement scale. The threshold was 42x too strict. rel_residuals themselves (3.2668e-3) unchanged. Script threshold adjusted along (1e-12->1e-9).",
+  "source": "sim_measured",
+  "quantity": "How ideal are the measured 3x3 Wilson loops as MTC fusion-character operators?",
+  "load_bearing": {
+    "note": "Could have been anything from 0 to O(1). This is the first MEASURABLE finite-size statement of this line. Independently confirmed by a second verification pass (own eigendecomposition, own analytic characters, 2026-07-16: c=0.14385, rel residual 3.2668e-03).",
+    "route_A_eigh_Mj": {
+      "eigenvalues_measured": [
+        -0.14310835056115315,
+        -0.14310835055419588,
+        0.05428174607224613,
+        0.3772724292136943
+      ],
+      "best_character": "(tau,taubar)",
+      "scale_c": 0.1438513917606607,
+      "rel_residual": 0.003266829782600346,
+      "eigenvalues_scaled": [
+        -0.9948346610316859,
+        -0.9948346609833217,
+        0.3773459916367014,
+        2.6226540083908154
+      ],
+      "ideal_character": [
+        -1.0,
+        -1.0,
+        0.3819660112501051,
+        2.6180339887498953
+      ],
+      "per_eigenvalue_abs_dev_scaled": [
+        0.005165338968314059,
+        0.005165339016678261,
+        0.004620019613403692,
+        0.00462001964092007
+      ],
+      "all_characters_residuals": {
+        "(1,1)": 0.9857208700980131,
+        "(tau,1)": 0.5608847546821673,
+        "(1,taubar)": 0.5608847546821673,
+        "(tau,taubar)": 0.003266829782600346
+      },
+      "discrimination_ratio_2nd_best_over_best": 171.69084158272602
+    },
+    "route_B_eigh_Mi": {
+      "eigenvalues_measured": [
+        -0.14310835056096333,
+        -0.14310835055682625,
+        0.05428174605846656,
+        0.3772724292118018
+      ],
+      "best_character": "(tau,taubar)",
+      "scale_c": 0.14385139175979655,
+      "rel_residual": 0.0032668297926239983,
+      "eigenvalues_scaled": [
+        -0.9948346610363425,
+        -0.9948346610075831,
+        0.3773459915431779,
+        2.6226540083934142
+      ],
+      "ideal_character": [
+        -1.0,
+        -1.0,
+        0.3819660112501051,
+        2.6180339887498953
+      ],
+      "per_eigenvalue_abs_dev_scaled": [
+        0.005165338963657451,
+        0.00516533899241689,
+        0.004620019706927214,
+        0.00462001964351888
+      ],
+      "all_characters_residuals": {
+        "(1,1)": 0.9857208701014262,
+        "(tau,1)": 0.5608847547081682,
+        "(1,taubar)": 0.5608847547081682,
+        "(tau,taubar)": 0.0032668297926239983
+      },
+      "discrimination_ratio_2nd_best_over_best": 171.69084106388408
+    },
+    "routes_agree": true,
+    "consistency_note": "Identical spectra of M_i and M_j are themselves a check: R M_j R^-1 = M_i at 4.19e-11 forces them equal."
+  },
+  "positive_control_discrimination": {
+    "note": "The fit is discriminating, not vacuous: the best character (tau,taubar) beats the 2nd-best by the stated factor. A vacuous fit would match several characters comparably.",
+    "ratio_route_A": 171.69084158272602
+  },
+  "role_of_theory": "The analytic doubled-Fibonacci S enters ONLY as the comparison reference — that is the purpose of the measurement (distance measured vs ideal). Not an extraction; no circularity.",
+  "scale_c_meaning": "The raw Mgs operators carry an arbitrary normalization; the best-fit scalar c absorbs it. The residual AFTER the fit is the honest ideality measure.",
+  "diagnosis": "This never surfaced because all previous checks compared |S| AFTER extraction (2.5e-11) and never the RAW loop operators against the fusion characters. Post-extraction agreement can be excellent while the input operators deviate at 3.3e-3.",
+  "consequence": "Sec. III finite-size statement: the honest, measurable limitation of 3x3 is 'loop operators are ideal only to 3.3e-3' — NOT 'real-symmetric hence phase-free' (refuted 15.7.) and NOT 'a second lattice size is infeasible' (the C3 channel exists at every size).",
+  "provenance": "p6_Mgs_i_3x3.npy / p6_Mgs_j_3x3.npy (original 3x3 run, 2026-06-21), analytic S_fib x conj(S_fib)."
+}

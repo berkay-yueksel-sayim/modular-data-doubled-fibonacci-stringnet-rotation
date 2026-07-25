@@ -1,0 +1,100 @@
+{
+  "created_by": "export_deposit_2x2.py (deterministic export of the 2x2 measured-matrix set)",
+  "purpose": "cleanly named 2x2 measured-matrix set, analogous to the deposited 3x3 set",
+  "derivation": "identical load paths and projection as the original 2x2 extraction run: M = sym(V^T Op V)",
+  "sources": {
+    "V_gs.npy": {
+      "path": "original run artifact (path not part of this record)",
+      "md5": "ebda1c6046d6bddebc8cfe6eb9416f8b"
+    },
+    "Wfat_s1_i.npy": {
+      "path": "original run artifact (path not part of this record)",
+      "md5": "a1aa13d23f37574578ebde42972c2a1d"
+    },
+    "Wfat_s1_j.npy": {
+      "path": "original run artifact (path not part of this record)",
+      "md5": "d647380663b52218808ad14a4d17542b"
+    },
+    "lw_torus.py": {
+      "path": "original run artifact (path not part of this record)",
+      "md5": "87cf45d29ed9aa6b635045a04b1848d2"
+    }
+  },
+  "exports": {
+    "p6_V_gs_2x2.npy": {
+      "md5": "ebda1c6046d6bddebc8cfe6eb9416f8b",
+      "shape": [
+        175,
+        4
+      ],
+      "dtype": "float64"
+    },
+    "p6_Mgs_i_2x2.npy": {
+      "md5": "46680648f4905dd1413623da20cf8c69",
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float64"
+    },
+    "p6_Mgs_j_2x2.npy": {
+      "md5": "cae81f6e37259c3ef7de2143ac68164c",
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float64"
+    },
+    "p6_M_R_2x2.npy": {
+      "md5": "13a43662e0ccc250587f9f69abfc5ebf",
+      "shape": [
+        4,
+        4
+      ],
+      "dtype": "float64"
+    }
+  },
+  "verification": {
+    "wilson_character_fit": {
+      "Mgs_i_2x2": "(tau,taubar)",
+      "discrimination": 25.702795328195624
+    },
+    "frame_both_directions": {
+      "e1": 1.1588191855142789,
+      "e2": 2.093776023339518e-15,
+      "min_used": 2.093776023339518e-15
+    },
+    "M_R_orthogonality_dev": {
+      "recomputed": 4.4093419488325565e-15,
+      "deposited": 4.4093419488325565e-15,
+      "match": true
+    },
+    "M_R_order3_dev": {
+      "recomputed": 6.343155857371215e-15,
+      "deposited": 6.343155857371215e-15,
+      "match": true
+    },
+    "frame_2x2_RMjR_vs_Mi": {
+      "recomputed": 2.093776023339518e-15,
+      "deposited": 2.093776023339518e-15,
+      "match": true
+    },
+    "ideality_2x2": {
+      "recomputed": 0.022118297120066792,
+      "deposited": 0.022118297120066792,
+      "match": true
+    },
+    "G5_VtV_dev": {
+      "recomputed": 2.2791988847973517e-15,
+      "deposited": 2.2791988847973517e-15,
+      "match": true
+    },
+    "all_match": true
+  },
+  "usage": {
+    "extraction_input": "p6_Mgs_i_2x2.npy",
+    "note": "p6_Mgs_i_2x2.npy is the Wilson matrix used by the extraction (run: wilson_choice = ops_wfat_i[1], character (tau,taubar), discrimination 25.7x). NAMING CAVEAT: the deposited files are named after their SOURCE operators (i <- Wfat_s1_i, j <- Wfat_s1_j), whereas the original run script refers to this same matrix internally as 'Mj' and to the opposite direction as 'Mi'. Feeding p6_Mgs_j_2x2.npy instead does not fail loudly: it returns three solutions of the same doubled-Fibonacci class whose residuals do NOT match the deposited ones. Reproduction: extract(p6_Mgs_i_2x2, p6_M_R_2x2, n_starts=240, input_scale=input_scale) returns the three solutions of rotation center (0,0) listed in p6_extraction_2x2.json, reproducing their residuals to all printed digits. n_starts is part of the recipe: the extract() default of 400 returns a superset (8 solutions) that contains those three.",
+    "input_scale": 0.022118297120066792,
+    "rotation_centers": "p6_M_R_2x2.npy is the center (0,0); the two further centers are built by the original run script from the same lattice basis via build_MR_center(ci,cj) and are not deposited as files, so three of the nine entries in p6_extraction_2x2.json are reproducible from this record alone."
+  }
+}
