@@ -227,7 +227,8 @@ print("\n" + "=" * 76)
 print(f"VERDICT: patch {'ACCEPTED' if ok else 'REJECTED'} "
       f"({sum(results[g]['pass'] for g in required)}/{len(required)} mandatory gates)")
 print(f"LATTICE CLEARANCE (incl. P5): {'YES' if lattice_ready else 'NO'}")
-with open(os.path.join(H, f"verify_{MOD}.json"), "w") as f:
-    json.dump({"module": MOD, "gates": results, "accepted": ok,
-               "lattice_ready": lattice_ready}, f, indent=2)
-print(f"EXPORT OK -> verify_{MOD}.json")
+if __name__ == "__main__":
+    with open(os.path.join(H, f"verify_{MOD}.json"), "w", encoding="utf-8") as f:
+        json.dump({"module": MOD, "gates": results, "accepted": ok,
+                   "lattice_ready": lattice_ready}, f, indent=2)
+    print(f"EXPORT OK -> verify_{MOD}.json")

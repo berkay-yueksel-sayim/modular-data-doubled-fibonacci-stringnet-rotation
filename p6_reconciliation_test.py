@@ -28,6 +28,18 @@ from scipy.linalg import expm
 from p6_extract_c3 import extract, _blocks, _B_of
 
 H = os.path.dirname(os.path.abspath(__file__))
+
+def _export(obj):
+    """Write the deposited JSON only when this file is RUN, never on import.
+    The gate below aborts with SystemExit; on import that abort would otherwise
+    leave a truncated p6_reconciliation_test.json behind in the record."""
+    if __name__ != "__main__":
+        return False
+    p = os.path.join(H, "p6_reconciliation_test.json")
+    with open(p, "w", encoding="utf-8") as fh:
+        json.dump(obj, fh, indent=2)
+    return True
+
 dep = json.load(open(os.path.join(H, "p6_loop_ideality.json")))
 rA = dep["load_bearing"]["route_A_eigh_Mj"]
 INPUT_DEV = rA["rel_residual"]                                  # 3.2668e-3
@@ -90,7 +102,7 @@ for seed in (7, 23):
 out["gate_baseline"] = ok_gate
 if not ok_gate:
     print(">>> GATE FAIL -- construction faulty again. ABORT, no physics finding.")
-    json.dump(out, open(os.path.join(H, "p6_reconciliation_test.json"), "w"), indent=2)
+    _export(out)
     raise SystemExit(1)
 
 # ---------------- PART 1: eigenvalue channel, REAL form ----------------
@@ -153,5 +165,5 @@ verdict = ("A_STRUCTURALLY_PROJECTED" if (flat1 and tracks2 and inv3) else
 print(f"part1 flat: {flat1} | part2 scales: {tracks2} | part3 invariant: {inv3}")
 print(f">>> VERDICT: {verdict}")
 out["verdict"] = verdict
-json.dump(out, open(os.path.join(H, "p6_reconciliation_test.json"), "w"), indent=2)
-print("EXPORT OK -> p6_reconciliation_test.json")
+if _export(out):
+    print("EXPORT OK -> p6_reconciliation_test.json")
