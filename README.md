@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/33892991/README.md)
 # Resolving the Full Modular Data of a Doubled-Fibonacci String-Net on a Finite Torus by Point-Group Rotation, and an Obstruction to Quasi-One-Dimensional Anyon Exchange
 
 **Author:** Berkay Yüksel Sayim
@@ -6,6 +7,8 @@
 
 > **Important — licensing:** paper, figures and data under CC BY 4.0; source code under the Apache License, Version 2.0. Version 1.0 (source code under MIT) has been withdrawn. Please read [IMPORTANT.md](IMPORTANT.md).
 
+> **Notice (2026-10-14, also on the Zenodo record).** The abstract below states that on the one-dimensionally mapped ladder the Hamiltonian transport of a single mobile Ising anyon “cannot realize the non-Abelian braid matrix”. This holds under the hypotheses stated in the paper, in particular that the braid phase sits in the bond amplitudes identically on both legs of the ladder. That hypothesis is the explicit Ising plaquette Hamiltonian, Eq. (52), of S. Singh, R. N. C. Pfeifer, G. Vidal and G. K. Brennen, Phys. Rev. B 89, 075112 (2014). The general hopping Hamiltonian of the same work, Eqs. (40)–(44), differs from Eq. (52) by complex conjugation of the hopping on one leg. With Eqs. (40)–(44), a mobile anyon encircling a pinned anyon acquires the monodromy R_c² in fusion channel c; for Ising anyons the two channels then differ by a sign, so the holonomy is not the identity, and the same holds for Fibonacci anyons. The no-go statement therefore applies to the ladder of Eq. (52); for the ladder of Eqs. (40)–(44) it does not follow. The static result of this work, the modular data obtained from the rotation channel, is not affected, and no computed value changes. The paper text will be corrected in the next version.
+
 ## Abstract
 
 We report a real-space resolution of the full modular data of a
@@ -13,8 +16,8 @@ doubled-Fibonacci Levin–Wen string-net on a finite torus, together with a
 bounded negative result for the dynamical half of the same program. (i) The
 vacuum row of the modular S-matrix, |S_0a| = d_a/D, is confirmed by two
 structurally distinct lattice routes, agreeing at <1e-9 (Verlinde–Casimir vs.
-theory at 1.1e-16). (ii) GSD = 4 is a separate check, and |S| is 24×O(4)
-gauge-invariant and size-robust to ≤2.5e-11. (iii) The Wilson-loop algebra
+theory at 1.1e-16). (ii) GSD = 4 is a separate check, and |S| is gauge-invariant
+under 24 sampled O(4) transformations and size-robust to ≤2.5e-11. (iii) The Wilson-loop algebra
 *alone* does not fix the chiral sign — measured: the loop algebra is
 ℂ⊕M₃(ℂ) (dim 10 = 1²+3²), its antisymmetric part vanishes on the real-symmetric
 holonomy, and the chiral splitting capacity is zero — a concrete instance of a
