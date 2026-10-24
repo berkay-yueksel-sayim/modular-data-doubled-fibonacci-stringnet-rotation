@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/33892991/README.md)
 # Resolving the Full Modular Data of a Doubled-Fibonacci String-Net on a Finite Torus by Point-Group Rotation, and an Obstruction to Quasi-One-Dimensional Anyon Exchange
 
 **Author:** Berkay Yüksel Sayim
